@@ -1,0 +1,44 @@
+<plugin>
+  <trmnl-fetch url="https://raw.githubusercontent.com/winemarshal68/restaurant-feed/main/reservations.json" interval="3600">
+    <template let:data>
+      <style>
+        body {
+          font-family: sans-serif;
+          font-size: 20px;
+          padding: 20px;
+          line-height: 1.6;
+        }
+        .res {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px dotted #aaa;
+          padding: 4px 0;
+        }
+        .left {
+          text-align: left;
+          white-space: nowrap;
+          font-weight: bold;
+        }
+        .right {
+          text-align: right;
+          white-space: nowrap;
+          font-family: monospace;
+        }
+      </style>
+      <h2>Today’s Reservations</h2>
+      <div>
+        {{ data.map(r => `
+          <div class="res">
+            <div class="left">${r.time} ${r.name} (${r.party})</div>
+            <div class="right">
+              Table ${r.table}
+              ${r.vip ? ' [Y]' : ''}
+              ${r.special ? ' •' : ''}
+              ${r.note ? ' ★' : ''}
+            </div>
+          </div>
+        `).join('') }}
+      </div>
+    </template>
+  </trmnl-fetch>
+</plugin>
