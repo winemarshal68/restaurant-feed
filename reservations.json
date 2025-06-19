@@ -1,0 +1,20 @@
+[
+  {
+    "time": "18:00",
+    "name": "Luis Alvarez",
+    "party": 2,
+    "table": "6",
+    "vip": false,
+    "special": false,
+    "note": true
+  },
+  {
+    "time": "19:00",
+    "name": "Olivia Tran",
+    "party": 4,
+    "table": "Bar",
+    "vip": true,
+    "special": true,
+    "note": false
+  }
+]
